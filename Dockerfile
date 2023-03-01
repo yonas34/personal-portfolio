@@ -5,4 +5,5 @@ RUN npm install
 RUN npm ci
 RUN npm run build
 RUN serve -s build
+RUN npm install -g serve
 EXPOSE 3000
