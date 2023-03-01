@@ -4,7 +4,5 @@ COPY . /usr/app
 RUN npm install
 RUN npm ci
 RUN npm run build
-
-FROM nginx:1.23.1-alpine
-EXPOSE 80
-COPY --from=build /usr/app/dist /usr/share/nginx/html
+RUN serve -s build
+EXPOSE 3000
